@@ -33,7 +33,7 @@ class Room {
     monster.HP -= attackDamage;
 
     if (monster.isAlive()) {
-      return console.log('... zbyva hp a ubral jsi..');
+      return console.log('');
     }
     this.enemies.splice(monsterIndex, 1);
     console.log(`The ${monster.name} is dead.`);
@@ -47,13 +47,13 @@ class Room {
   attackPlayer(enemy) {
     const attackDamage = player.attack();
     if (attackDamage === null) {
-      return console.log('no hit');
+      return console.log('No hit');
     }
     const monster = this.enemies[0];
     monster.HP -= attackDamage;
 
     if (monster.isAlive()) {
-      return console.log('... zbyva hp a ubral jsi..');
+      return console.log('');
     }
   }
 }
@@ -105,7 +105,7 @@ class Game {
     }
     this.player.HP -= attackDamage;
     if (this.player.isAlive()) {
-      return console.log('... you get hited..');
+      return console.log('');
     }
 
     console.log('The Player got killed by the monster. Game over.');
@@ -180,8 +180,8 @@ const rooms = [
     ' and it is a small chamber, which is illuminated by a glowing portal\n ',
     [
       new Enemy('Giant Dragon', 4, 8, 90),
-      new Enemy('Giant Dragon', 4, 8, 90),
-      new Enemy('Giant Dragon', 4, 8, 90),
+      // new Enemy('Giant Dragon', 4, 8, 90),
+      // new Enemy('Giant Dragon', 4, 8, 90),
     ]
   ),
   new Room('Portal', '\nCongratulations, you made through the dungeon!', []),
